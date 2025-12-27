@@ -1,15 +1,13 @@
 <script lang="ts">
 	import './layout.css';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let { children, data } = $props();
 </script>
 
-<!-- eslint-disable svelte/no-navigation-without-resolve -->
-
 <div id="sidebar">
 	<h1>
-		<a href="/">React Router Contacts</a>
+		<a href="/">SvelteKit Contacts</a>
 	</h1>
 	<div>
 		<form id="search-form" role="search">
@@ -28,7 +26,7 @@
 					<li>
 						<a
 							href="/contacts/{contact.id}"
-							class:active={$page.url.pathname === `/contacts/${contact.id}`}
+							class:active={page.url.pathname === `/contacts/${contact.id}`}
 						>
 							{#if contact.first || contact.last}
 								{contact.first} {contact.last}
