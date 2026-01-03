@@ -1,10 +1,12 @@
 <script lang="ts">
 	import './layout.css';
 	import { page } from '$app/state';
+	import favicon from '$lib/assets/favicon.svg';
 
 	let { children, data } = $props();
 </script>
 
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <div id="sidebar">
 	<h1>
 		<a href="/">SvelteKit Contacts</a>
